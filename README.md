@@ -13,8 +13,8 @@ For GPT partition automounting, the EFI partion _must_ be on the same device as 
 - format EFI partition: `mkfs.vfat -F32 -n EFI /dev/[device]1`
 - `cryptsetup luksFormat /dev/[device]2`.
 - `cryptsetup luksOpen /dev/[device]2 luks`
-- `mkfs.btrfs -L arch /dev/mapper/luks`
-- `mount /dev/mapper/luks /mnt`
+- `mkfs.btrfs -L arch /dev/mapper/root`
+- `mount /dev/mapper/root /mnt`
 
 
 - btrfs fun basics
@@ -23,7 +23,7 @@ For GPT partition automounting, the EFI partion _must_ be on the same device as 
   - `btrfs subvolume create /mnt/@home`
   - `btrfs subvolume create /mnt/@snapshots`
   - `umount /mnt`
-  - `mount -o noatime,ssd,compress=lzo,subvol=@ /dev/mapper/luks /mnt`
+  - `mount -o noatime,ssd,compress=lzo,subvol=@ /dev/mapper/root /mnt`
   - `mount -m -o noatime,ssd,compress=lzo,subvol=@home /dev/mapper/root /mnt/home`
   - `mount -m -o noatime,ssd,compress=lzo,subvol=@swap /dev/mapper/root /mnt/swap`
   - `mount -m -o noatime,ssd,compress=lzo,subvol=@snapshots /dev/mapper/root /mnt/.snapshots`
