@@ -31,7 +31,7 @@ For GPT partition automounting, the EFI partion _must_ be on the same device as 
 - `mount -m -o umask=0077,noexec,nosuid,nodev /dev/[device]1 /mnt/boot`
 
 Install base system:
-`pacstrap -K /mnt base base-devel linux-lts linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector dhcpcd udisks2`
+`pacstrap -K /mnt base base-devel linux-lts linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector dhcpcd udisks2 fwupd`
 
 - `genfstab -U /mnt >> /mnt/etc/fstab`
 - `arch-chroot /mnt`
