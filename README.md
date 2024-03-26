@@ -84,3 +84,4 @@ Enrolling fido2 key
  	---
 	root UUID=<blkid /dev/[device]2> none fido2-device=auto
 	```
+- `mkinitcpio -P`
