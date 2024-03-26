@@ -75,3 +75,12 @@ Install base system:
 - `exit`
 - `umount -R /mnt`
 - `reboot`
+
+Enrolling fido2 key
+- `systemd-cryptenroll /dev/[device]2 --fido2-device=auto --fido2-with-client-pin=yes --fido2-with-user-presence=yes`
+- configure /etc/crypttab.initramfs
+	```
+	vim /etc/crypttab.initramfs
+ 	---
+	root UUID=<blkid /dev/[device]2> none fido2-device=auto
+	```
