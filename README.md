@@ -52,7 +52,7 @@ Install base system:
 	```
  	vim /etc/mkinitcpio.conf
  	---
-	HOOKS=(systemd keyboard autodetect microcode modconf kms sd-vconsole sd-encrypt filesystems fsck)`
+	HOOKS=(base systemd keyboard autodetect microcode modconf kms sd-vconsole sd-encrypt filesystems fsck)`
 	```
 - kernel command line:
 	```
