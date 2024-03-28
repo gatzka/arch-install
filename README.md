@@ -29,7 +29,7 @@ We always assume that this is an EFI installation.
 	mount -m -o umask=0077,noexec,nosuid,nodev /dev/[device]1 /mnt/boot
 	```
 5. Install base system:
-	- `pacstrap -K /mnt base base-devel linux-lts linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector dhcpcd udisks2 fwupd`
+	- `pacstrap -K /mnt base base-devel linux-lts linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector networkmanager udisks2 fwupd`
 	- `genfstab -U /mnt >> /mnt/etc/fstab`
 	- `arch-chroot /mnt`
 	- `ln -sf /usr/share/zoneinfo/America/Toronto /etc/localtime # replace with your timezone`
@@ -83,6 +83,7 @@ We always assume that this is an EFI installation.
 		- Make sure `/boot/EFI/Linux` exists (where `uki` points to)
 	- `mkinitcpio -P`
 8. The rest:
+	- `systemctl enable NetworkManager`
 	- `passwd`
 	- `exit`
 	- `umount -R /mnt`
