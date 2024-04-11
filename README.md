@@ -98,3 +98,60 @@ We always assume that this is an EFI installation.
 		root UUID=<blkid /dev/[device]2> none fido2-device=auto
 		```
 	- `mkinitcpio -P`
+
+10. Create user
+	```
+	useradd -mG wheel,storage,power,log,adm,uucp,tss,rfkill -s /bin/bash <username> # replace with your username
+
+	passwd <username>
+	```
+
+11. sudo
+	- set vim editor for visudo
+		```
+		vim /etc/sudoers
+		---
+		Defaults editor=/usr/bin/vim
+		```
+	- allow group wheel to run with root privileges
+		```
+		visudo
+		---
+		%wheel ALL=(ALL:ALL) ALL
+		```
+
+12. reflector
+	- Configure reflector
+		```
+		cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.ori
+		vim /etc/xdg/reflector/reflector.conf
+		---
+		--save /etc/pacman.d/mirrorlist
+		--protocol https
+		--country Germany # replace Germany with you country
+		--latest 5
+		--sort rate
+		```
+	- Enable reflector
+		```
+		systemctl enable reflector.timer
+		```
+13. Improving compile times - makepkg
+	- Parallel compilation
+		```
+		vim /etc/makepkg.conf
+	 	---
+		MAKEFLAGS="-j$(nproc --ignore=2)" # 2 less than total threads
+		```
+
+14. Install yay
+	```
+	cd /tmp
+	git clone https://aur.archlinux.org/yay.git
+	cd yay
+	makepkg -si
+	```
+
+15. Installing xfce
+	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet`
+	- `systemctl enbale lightdm.service`
