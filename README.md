@@ -156,3 +156,13 @@ We always assume that this is an EFI installation.
 15. Installing xfce
 	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet`
 	- `systemctl enbale lightdm.service`
+
+16. Configure timesynd
+	```
+	sudo vim /etc/systemd/timesyncd.conf
+	---
+	edit NTP=
+	Comment out FallbackNTP
+	---
+	yay -S networkmanager-dispatcher-timesyncd
+	```
