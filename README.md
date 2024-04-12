@@ -82,6 +82,7 @@ We always assume that this is an EFI installation.
 		- Uncomment `*_uki=` lines, replace any `/efi/*` with `/boot/*`, comment out `*_image=` lines, uncomment splash if desired.
 		- Make sure `/boot/EFI/Linux` exists (where `uki` points to)
 	- `mkinitcpio -P`
+	- `rm /boot/initramfs-linux*.img`
 8. The rest:
 	- `systemctl enable NetworkManager`
 	- `passwd`
