@@ -174,3 +174,13 @@ We always assume that this is an EFI installation.
 	---
 	yay -S networkmanager-dispatcher-timesyncd
 	```
+
+17. Swap
+	- create swapfile: `sudo btrfs filesystem mkswapfile --size 32g --uuid clear /swap/swapfile`
+	- `sudo swapon /swap/swapfile`
+	```
+	sudo vim /etc/fstab
+	---
+	# /swap/swapfile
+	/swap/swapfile	none	swap	defaults 0 0
+	```
