@@ -121,7 +121,14 @@ We always assume that this is an EFI installation.
 		%wheel ALL=(ALL:ALL) ALL
 		```
 
-12. reflector
+12. pacman & reflector
+	- Enable color and parallel downloads:
+		```
+		sudo vim /etc/pacman.conf
+		---
+		Uncomment: Color
+		Uncomment: ParallelDownloads 5
+		```
 	- Configure reflector
 		```
 		cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.ori
