@@ -184,3 +184,5 @@ We always assume that this is an EFI installation.
 	# /swap/swapfile
 	/swap/swapfile	none	swap	defaults 0 0
 	```
+	- lower swappiness value:
+	`echo "vm.swappiness = 10" |sudo tee /etc/sysctl.d/99-swappiness.conf`
