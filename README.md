@@ -186,3 +186,12 @@ We always assume that this is an EFI installation.
 	```
 	- lower swappiness value:
 	`echo "vm.swappiness = 10" |sudo tee /etc/sysctl.d/99-swappiness.conf`
+
+18. Limit journal size
+	```
+	sudo vim /etc/systemd/journald.conf
+	---
+	Uncomment SystemMaxUse=200M
+	---
+	yay -S networkmanager-dispatcher-timesyncd
+	```
