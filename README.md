@@ -201,3 +201,5 @@ We always assume that this is an EFI installation.
 20. Install fonts: `yay -S ttf-liberation ttf-carlito noto-fonts noto-fonts-emoji adobe-source-sans-fonts adobe-source-serif-fonts ttf-inconsolata`
 
 21. Browser: `yay -S google-chrome firefox firefox-i18n-en-us firefox-i18n-de`
+
+22. Audio `yay -S pipewire pipewire-audio pipewire-pulse xfce4-pulseaudio-plugin pavucontrol`
