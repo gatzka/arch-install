@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration/helpers'
+let g:netrw_dirhist_8='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration/helpers/data'
+let g:netrw_dirhist_7='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration/helpers'
+let g:netrw_dirhist_6='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration'
+let g:netrw_dirhist_5='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration/jde/inbound'
+let g:netrw_dirhist_4='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration/jde'
+let g:netrw_dirhist_3='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/erp-integration'
+let g:netrw_dirhist_2='/home/gatzka/workspace/nexplore/mina/e2ep-mina-backend/test/logger'
+let g:netrw_dirhist_1='/home/gatzka/workspace/nexplore/iots-clpl-deploy/monitoring/grafana'
+let g:netrw_dirhist_0='/home/gatzka/workspace/nexplore/iots-clpl-deploy/monitoring'
