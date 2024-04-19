@@ -162,7 +162,7 @@ We always assume that this is an EFI installation.
 	```
 
 15. Installing xfce
-	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet`
+	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet xfce4-whiskermenu-plugin`
 	- `systemctl enbale lightdm.service`
 
 16. Configure timesynd
