@@ -207,3 +207,14 @@ We always assume that this is an EFI installation.
 23. gstreamer: `yay -S gstreamer gst-plugin-pipewire gst-plugin-libcamera`
 
 24. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
+
+25. Setting up Epson Workforce Pro WF-4820
+
+	```
+	yay -S cups cups-pdf system-config-printer avahi nss-mdns epson-inkjet-printerescpr2
+	systemctl enable avahi
+	systemctl start avahi
+	systemctl enable cups
+	systemctl start cups
+	sudo system-config-printer
+	```
