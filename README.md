@@ -162,7 +162,7 @@ We always assume that this is an EFI installation.
 	```
 
 15. Installing xfce
-	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet xfce4-whiskermenu-plugin xfce4-clipman-plugin`
+	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet xfce4-whiskermenu-plugin xfce4-clipman-plugin xfce4-goodies`
 	- `systemctl enbale lightdm.service`
 
 16. Configure timesynd
@@ -209,7 +209,6 @@ We always assume that this is an EFI installation.
 24. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
 
 25. Setting up Epson Workforce Pro WF-4820
-
 	```
 	yay -S cups cups-pdf system-config-printer avahi nss-mdns epson-inkjet-printerescpr2
 	systemctl enable avahi
@@ -218,3 +217,7 @@ We always assume that this is an EFI installation.
 	systemctl start cups
 	sudo system-config-printer
 	```
+
+26. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
+
+27. The rest: `yay -S thunderbird tmux openssh cscope`
