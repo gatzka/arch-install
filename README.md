@@ -221,3 +221,7 @@ We always assume that this is an EFI installation.
 26. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
 
 27. The rest: `yay -S thunderbird tmux openssh cscope`
+
+28. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
+
+29. pdf viewer: `yay -S atril evince xournalpp`
