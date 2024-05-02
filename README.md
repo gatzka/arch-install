@@ -225,3 +225,4 @@ We always assume that this is an EFI installation.
 28. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
 
 29. pdf viewer: `yay -S atril evince xournalpp`
+30. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
