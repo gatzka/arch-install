@@ -1,0 +1,26 @@
+[user]
+	email = stephan.gatzka@gmail.com
+	name = Stephan Gatzka
+[push]
+	default = current
+[sendemail]
+	smtpencryption = tls
+	smtpserver = smtp.gmail.com
+	smtpuser = stephan.gatzka@gmail.com
+	smtpserverport = 587
+[credential]
+	helper = cache --timeout=36000
+[diff]
+	tool = meld
+[merge]
+	tool = meld
+[alias]
+	surr = submodule update --init --remote --recursive
+	pp = pull --prune
+
+[core]
+	autocrlf = input
+[color]
+	ui = auto
+[pull]
+	rebase = false
