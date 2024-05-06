@@ -233,4 +233,4 @@ We always assume that this is an EFI installation.
 	yay -S wireguard-tools
 	nmcli connection import type wireguard file <wireguard configuration file>
 	```
-34. Power Optimization with TLP: `yay -S tlp ethtool smartmontools`
+34. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
