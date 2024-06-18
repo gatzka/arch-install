@@ -29,7 +29,7 @@ We always assume that this is an EFI installation.
 	mount -m -o umask=0077,noexec,nosuid,nodev /dev/[device]1 /mnt/boot
 	```
 5. Install base system:
-	- `pacstrap -K /mnt base base-devel linux-lts linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector pacman-contrib networkmanager udisks2 fwupd`
+	- `pacstrap -K /mnt base base-devel linux linux-firmware btrfs-progs {intel|amd}-ucode sudo vim git reflector pacman-contrib networkmanager udisks2 fwupd`
 	- `genfstab -U /mnt >> /mnt/etc/fstab`
 	- `arch-chroot /mnt`
 	- `ln -sf /usr/share/zoneinfo/America/Toronto /etc/localtime # replace with your timezone`
