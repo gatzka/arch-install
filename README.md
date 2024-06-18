@@ -59,7 +59,7 @@ We always assume that this is an EFI installation.
 		```
  		vim /etc/mkinitcpio.conf
  		---
-		HOOKS=(base systemd keyboard autodetect microcode modconf kms sd-vconsole sd-encrypt filesystems fsck)`
+		HOOKS=(base systemd keyboard autodetect microcode modconf kms sd-vconsole sd-encrypt filesystems fsck)
 		```
 	- configure kernel command line:
  		- `mkdir /etc/cmdline.d`
