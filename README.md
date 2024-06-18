@@ -11,7 +11,7 @@ We always assume that this is an EFI installation.
 	- 100% rest, Linux partition, Hex code `8304`
 	- format EFI partition: `mkfs.vfat -F32 -n EFI /dev/[device]1`
 	- `cryptsetup luksFormat /dev/[device]2`.
-	- `cryptsetup luksOpen /dev/[device]2 luks`
+	- `cryptsetup luksOpen /dev/[device]2 root`
 	- `mkfs.btrfs -L arch /dev/mapper/root`
 	- `mount /dev/mapper/root /mnt`
 3. btrfs setup:
