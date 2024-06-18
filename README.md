@@ -48,7 +48,7 @@ We always assume that this is an EFI installation.
 	vim /etc/hosts
 	----
 	127.0.0.1 <hostname>.localdomain localhost
-	::1 localhost.localdomain localhost`
+	::1 localhost.localdomain localhost
 	```
 6. Install bootloader:
 	```
