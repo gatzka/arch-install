@@ -197,8 +197,6 @@ We always assume that this is an EFI installation.
 	sudo vim /etc/systemd/journald.conf
 	---
 	Uncomment SystemMaxUse=200M
-	---
-	yay -S networkmanager-dispatcher-timesyncd
 	```
 
 20. Enable periodic trim: `sudo systemctl enable fstrim.timer`
