@@ -91,6 +91,7 @@ We always assume that this is an EFI installation.
 	- `reboot`
 
 9. Enrolling fido2 key:
+	- `pacman -S libfido2`
 	- `systemd-cryptenroll /dev/[device]2 --fido2-device=auto --fido2-with-client-pin=yes --fido2-with-user-presence=yes`
 	- configure /etc/crypttab.initramfs
 		```
@@ -100,14 +101,14 @@ We always assume that this is an EFI installation.
 		```
 	- `mkinitcpio -P`
 
-10. Create user
+11. Create user
 	```
 	useradd -mG wheel,storage,power,log,adm,uucp,tss,rfkill -s /bin/bash <username> # replace with your username
 
 	passwd <username>
 	```
 
-11. sudo
+12. sudo
 	- set vim editor for visudo
 		```
 		vim /etc/sudoers
@@ -121,7 +122,7 @@ We always assume that this is an EFI installation.
 		%wheel ALL=(ALL:ALL) ALL
 		```
 
-12. pacman & reflector
+13. pacman & reflector
 	- Enable color and parallel downloads:
 		```
 		sudo vim /etc/pacman.conf
@@ -145,7 +146,7 @@ We always assume that this is an EFI installation.
 		```
 		systemctl enable reflector.timer
 		```
-13. Improving compile times - makepkg
+14. Improving compile times - makepkg
 	- Parallel compilation
 		```
 		vim /etc/makepkg.conf
@@ -153,7 +154,7 @@ We always assume that this is an EFI installation.
 		MAKEFLAGS="-j$(nproc --ignore=2)" # 2 less than total threads
 		```
 
-14. Install yay
+15. Install yay
 	```
 	cd /tmp
 	git clone https://aur.archlinux.org/yay.git
@@ -161,11 +162,11 @@ We always assume that this is an EFI installation.
 	makepkg -si
 	```
 
-15. Installing xfce
+16. Installing xfce
 	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet xfce4-whiskermenu-plugin xfce4-clipman-plugin xfce4-goodies file-roller`
 	- `systemctl enbale lightdm.service`
 
-16. Configure timesynd
+17. Configure timesynd
 	```
 	sudo vim /etc/systemd/timesyncd.conf
 	---
@@ -175,7 +176,7 @@ We always assume that this is an EFI installation.
 	yay -S networkmanager-dispatcher-timesyncd
 	```
 
-17. Swap
+18. Swap
 	- create swapfile: `sudo btrfs filesystem mkswapfile --size 32g --uuid clear /swap/swapfile`
 	- `sudo swapon /swap/swapfile`
 	```
@@ -187,7 +188,7 @@ We always assume that this is an EFI installation.
 	- lower swappiness value:
 	`echo "vm.swappiness = 10" |sudo tee /etc/sysctl.d/99-swappiness.conf`
 
-18. Limit journal size
+19. Limit journal size
 	```
 	sudo vim /etc/systemd/journald.conf
 	---
@@ -196,19 +197,19 @@ We always assume that this is an EFI installation.
 	yay -S networkmanager-dispatcher-timesyncd
 	```
 
-19. Enable periodic trim: `sudo systemctl enable fstrim.timer`
+20. Enable periodic trim: `sudo systemctl enable fstrim.timer`
 
-20. Install fonts: `yay -S ttf-liberation ttf-carlito noto-fonts noto-fonts-emoji adobe-source-sans-fonts adobe-source-serif-fonts acroread-fonts-systemwide ttf-inconsolata`
+21. Install fonts: `yay -S ttf-liberation ttf-carlito noto-fonts noto-fonts-emoji adobe-source-sans-fonts adobe-source-serif-fonts acroread-fonts-systemwide ttf-inconsolata`
 
-21. Browser: `yay -S google-chrome firefox firefox-i18n-en-us firefox-i18n-de`
+22. Browser: `yay -S google-chrome firefox firefox-i18n-en-us firefox-i18n-de`
 
-22. Audio: `yay -S pipewire pipewire-audio pipewire-pulse xfce4-pulseaudio-plugin pavucontrol`
+23. Audio: `yay -S pipewire pipewire-audio pipewire-pulse xfce4-pulseaudio-plugin pavucontrol`
 
-23. gstreamer: `yay -S gstreamer gst-plugin-pipewire gst-plugin-libcamera`
+24. gstreamer: `yay -S gstreamer gst-plugin-pipewire gst-plugin-libcamera`
 
-24. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
+25. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
 
-25. Setting up Epson Workforce Pro WF-4820
+26. Setting up Epson Workforce Pro WF-4820
 	```
 	yay -S cups cups-pdf system-config-printer avahi nss-mdns epson-inkjet-printerescpr2
 	systemctl enable avahi
@@ -218,23 +219,23 @@ We always assume that this is an EFI installation.
 	sudo system-config-printer
 	```
 
-26. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
+27. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
 
-27. The rest: `yay -S thunderbird tmux openssh cscope`
+28. The rest: `yay -S thunderbird tmux openssh cscope`
 
-28. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
+29. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
 
-29. pdf viewer: `yay -S atril evince xournalpp`
-30. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
-31. Updates: `yay -Syu && yay -Qtdq | yay -Rns -`
-32. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone git@github.com:jimeh/git-aware-prompt.git`
-33. wireguard:
+30. pdf viewer: `yay -S atril evince xournalpp`
+31. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
+32. Updates: `yay -Syu && yay -Qtdq | yay -Rns -`
+33. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone git@github.com:jimeh/git-aware-prompt.git`
+34. wireguard:
 	```
 	yay -S wireguard-tools
 	nmcli connection import type wireguard file <wireguard configuration file>
 	```
-34. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
-35. bluetooth:
+35. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
+36. bluetooth:
 	```
     yay -S bluez bluez-utils blueman
     systemctl enable bluetooth.service
