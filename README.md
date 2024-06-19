@@ -101,6 +101,10 @@ We always assume that this is an EFI installation.
 		```
 	- `mkinitcpio -P`
 
+10. Enrolling recovery key:
+	- `systemd-cryptenroll /dev/[device]2 --recovery-key`
+	- `systemd-cryptenroll /dev/[device]2 --wipe-slot=SLOT` # replace SLOT with the slot of the original password
+
 11. Create user
 	```
 	useradd -mG wheel,storage,power,log,adm,uucp,tss,rfkill -s /bin/bash <username> # replace with your username
