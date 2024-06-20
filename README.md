@@ -212,7 +212,7 @@ We always assume that this is an EFI installation.
 25. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
 
 26. Setting up Epson Workforce Pro WF-4820
-    	```
+	```
 	sudo vim /etc/nsswitch.conf
 	---
 	hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
