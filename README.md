@@ -205,7 +205,7 @@ We always assume that this is an EFI installation.
 
 22. Browser: `yay -S google-chrome firefox firefox-i18n-en-us firefox-i18n-de`
 
-23. Audio: `yay -S pipewire pipewire-audio pipewire-pulse xfce4-pulseaudio-plugin pavucontrol`
+23. Audio: `yay -S pipewire pipewire-audio pipewire-pulse xfce4-pulseaudio-plugin pavucontrol sof-firmware`
 
 24. gstreamer: `yay -S gstreamer gst-plugin-pipewire gst-plugin-libcamera`
 
