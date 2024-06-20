@@ -212,32 +212,37 @@ We always assume that this is an EFI installation.
 25. optical disc: `yay -S libcdio libdvdread libdvdcss libdvdnav libblueray libaacs libbdplus`
 
 26. Setting up Epson Workforce Pro WF-4820
+    	```
+	sudo vim /etc/nsswitch.conf
+	---
+	hosts: mymachines mdns_minimal [NOTFOUND=return] resolve [!UNAVAIL=return] files myhostname dns
+	```
 	```
 	yay -S cups cups-pdf system-config-printer avahi nss-mdns epson-inkjet-printerescpr2
-	systemctl enable avahi
-	systemctl start avahi
+	systemctl enable avahi-daemon.service
+	systemctl start avahi-daemon.service
 	systemctl enable cups
 	systemctl start cups
 	sudo system-config-printer
 	```
 
-27. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
+28. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
 
-28. The rest: `yay -S thunderbird tmux openssh cscope`
+29. The rest: `yay -S thunderbird tmux openssh cscope`
 
-29. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
+30. xelatex: `yay -S texlive-xetex texlive-latex texlive-latexrecommended texlive-latexextra texlive-fontsrecommended texlive-langenglish texlive-langgerman texlive-miniopro-git texlive-myriadpro-git`
 
-30. pdf viewer: `yay -S atril evince xournalpp`
-31. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
-32. Updates: `yay -Syu && yay -Qtdq | yay -Rns -`
-33. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone git@github.com:jimeh/git-aware-prompt.git`
-34. wireguard:
+31. pdf viewer: `yay -S atril evince xournalpp`
+32. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
+33. Updates: `yay -Syu && yay -Qtdq | yay -Rns -`
+34. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone git@github.com:jimeh/git-aware-prompt.git`
+35. wireguard:
 	```
 	yay -S wireguard-tools
 	nmcli connection import type wireguard file <wireguard configuration file>
 	```
-35. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
-36. bluetooth:
+36. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
+37. bluetooth:
 	```
     yay -S bluez bluez-utils blueman
     systemctl enable bluetooth.service
