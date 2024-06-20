@@ -235,7 +235,7 @@ We always assume that this is an EFI installation.
 31. pdf viewer: `yay -S atril evince xournalpp`
 32. docbook (html, epub, pdf): `yay -S docbook-xsl docbook-xml zip epubcheck fop`
 33. Updates: `yay -Syu && yay -Qtdq | yay -Rns -`
-34. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone git@github.com:jimeh/git-aware-prompt.git`
+34. git aware prompt: `mkdir ~/.bash ; cd ~/.bash ; git clone https://github.com/jimeh/git-aware-prompt.git`
 35. wireguard:
 	```
 	yay -S wireguard-tools
