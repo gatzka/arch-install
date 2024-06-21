@@ -241,8 +241,13 @@ We always assume that this is an EFI installation.
 	yay -S wireguard-tools
 	nmcli connection import type wireguard file <wireguard configuration file>
 	```
-36. Power Optimization with TLP: `yay -S tlp tlp-rdw ethtool smartmontools`
-37. bluetooth:
+36. Power Optimization with TLP:
+	```
+	yay -S tlp tlp-rdw ethtool smartmontools
+ 	sudo systemctl enable tlp.service
+	```
+
+38. bluetooth:
 	```
     yay -S bluez bluez-utils blueman
     systemctl enable bluetooth.service
