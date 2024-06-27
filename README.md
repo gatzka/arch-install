@@ -156,6 +156,7 @@ We always assume that this is an EFI installation.
 		vim /etc/makepkg.conf
 	 	---
 		MAKEFLAGS="-j$(nproc --ignore=2)" # 2 less than total threads
+		OPTIONS=(... !debug ...)
 		```
 
 15. Install yay
