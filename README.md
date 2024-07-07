@@ -253,3 +253,19 @@ We always assume that this is an EFI installation.
     yay -S bluez bluez-utils blueman
     systemctl enable bluetooth.service
 	```
+
+
+For proton VPN connections proton advices to disable IPv6 traffic:
+```
+vim /etc/sysctl.d/90-disable_ipv6.conf
+---
+net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1
+net.ipv6.conf.lo.disable_ipv6 = 1
+net.ipv6.conf.wlp0s20f3.disable_ipv6 = 1
+```
+In addtion, to prevent DNS leaks, the DNS server used should be only the server assigned by proton VPN. Using network-manager, you can achive this like this
+```
+nmcli connection modify proton-wg-is-de ipv4.dns-priority -10
+```
+-10 is an example. The value should be negative to flush out formerly assigned DNS servers.
