@@ -172,7 +172,7 @@ We always assume that this is an EFI installation.
 	- `systemctl enbale lightdm.service`
  	- `sudo localectl --no-convert set-x11-keymap de pc105 nodeadkeys`
 
-17. Configure timesynd
+17. Configure timesyncd
 	```
 	sudo vim /etc/systemd/timesyncd.conf
 	---
