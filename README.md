@@ -169,7 +169,7 @@ We always assume that this is an EFI installation.
 
 16. Installing xfce
 	- `pacman -S lightdm lightdm-gtk-greater lightdm-gtk-greater-settings xorg-server nvidia nvidia-utils xfce4 network-manager-applet xfce4-whiskermenu-plugin xfce4-clipman-plugin xfce4-goodies file-roller`
-	- `systemctl enbale lightdm.service`
+	- `systemctl enable lightdm.service`
  	- `sudo localectl --no-convert set-x11-keymap de pc105 nodeadkeys`
 
 17. Configure timesyncd
