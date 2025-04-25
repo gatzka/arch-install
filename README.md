@@ -11,7 +11,7 @@ We always assume that this is an EFI installation.
 2. Partitioning: For GPT partition automounting, the EFI partion _must_ be on the same device as the Linux root partition!
 
    - `gdisk /dev/[device]`
-   - EFI partition on the system: `+256M`, EFI partition, hex code `ef00`
+   - EFI partition on the system: `+1G`, EFI partition, hex code `ef00`
    - 100% rest, Linux partition, Hex code `8304`
    - format EFI partition: `mkfs.vfat -F32 -n EFI /dev/[device]1`
    - `cryptsetup luksFormat /dev/[device]2`.
