@@ -140,7 +140,7 @@ We always assume that this is an EFI installation.
 11. Create user
 
      ```bash
-     useradd -mG wheel,storage,power,log,adm,uucp,tss,rfkill -s /bin/bash <username> # replace with your username
+     useradd -mG wheel,storage,power,optical,log,adm,uucp,tss,rfkill -s /bin/bash <username> # replace with your username
     
      passwd <username>
      ```
