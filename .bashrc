@@ -108,7 +108,6 @@ export LANGUAGE=en_US.UTF-8
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
-export SVN_EDITOR=vim
 export VISUAL=vim
 export EDITOR=vim
 
@@ -119,8 +118,6 @@ export PATH=${PATH}:~/bin/
 export PATH=${PATH}:~/go/bin/
 export PATH=${PATH}:~/.local/bin/
 
-export PATH=${PATH}:/opt/poky/1.7.1/sysroots/x86_64-pokysdk-linux/usr/bin/powerpc-poky-linux/
-export PATH=${PATH}:/opt/gcc-linaro-5.3.1-2016.05-x86_64_arm-linux-gnueabihf/bin/
 
 export BROWSER=firefox
 
@@ -131,5 +128,3 @@ export GITAWAREPROMPT=~/.bash/git-aware-prompt
 source "${GITAWAREPROMPT}/main.sh"
 export PS1="\${debian_chroot:+(\$debian_chroot)}\u@\h:\w \[$txtcyn\]\$git_branch\[$txtred\]\$git_dirty\[$txtrst\]\$ "
 
-# added by travis gem
-[ -f /home/gatzka/.travis/travis.sh ] && source /home/gatzka/.travis/travis.sh
