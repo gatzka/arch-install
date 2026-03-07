@@ -343,6 +343,6 @@ We always assume that this is an EFI installation.
     yay -S gnome-keyring seahorse gcr-4
     systemctl --user enable gcr-ssh-agent.socket
     systemctl --user start gcr-ssh-agent.socket
-    echo "export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/gcr/ssh" > /etc/profile.d/ssh_auth_gcr.sh
+    echo export SSH_AUTH_SOCK='$XDG_RUNTIME_DIR'/gcr/ssh > /etc/profile.d/ssh_auth_gcr.sh
     reboot
     ```
