@@ -346,3 +346,100 @@ We always assume that this is an EFI installation.
     echo export SSH_AUTH_SOCK='$XDG_RUNTIME_DIR'/gcr/ssh > /etc/profile.d/ssh_auth_gcr.sh
     reboot
     ```
+
+38. Select high-performance desktop scheduler (optional)
+
+```bash
+yay -S scx-scheds-git
+```
+
+Create configuration file:
+```bash
+/etc/scx_loader/config.toml
+---
+
+default_sched = "scx_cosmos"
+default_mode = "Auto"
+
+[scheds.scx_bpfland]
+auto_mode = ["-m", "auto"]
+gaming_mode = ["-m", "all"]
+lowlatency_mode = ["-m", "performance", "-w"]
+powersave_mode = ["-s", "20000", "-m", "powersave", "-I", "100", "-t", "100"]
+server_mode = ["-s", "20000", "-S"]
+
+[scheds.scx_rusty]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
+
+[scheds.scx_lavd]
+auto_mode = ["--autopilot"]
+gaming_mode = ["--performance"]
+lowlatency_mode = ["--performance"]
+powersave_mode = ["--powersave"]
+server_mode = ["--autopilot"]
+
+[scheds.scx_flash]
+auto_mode = ["-m", "auto"]
+gaming_mode = ["-m", "all"]
+lowlatency_mode = ["-m", "performance", "-w", "-C", "0"]
+powersave_mode = ["-m", "powersave", "-I", "10000", "-t", "10000", "-s", "10000", "-S", "1000"]
+server_mode = ["-m", "all", "-s", "20000", "-S", "1000", "-I", "-1", "-D", "-L"]
+
+[scheds.scx_p2dq]
+auto_mode = ["--sched-mode", "default"]
+gaming_mode = ["--task-slice", "true", "-f", "--sched-mode", "performance"]
+lowlatency_mode = ["-y", "-f", "--task-slice", "true"]
+powersave_mode = ["--sched-mode", "efficiency"]
+server_mode = ["--keep-running"]
+
+[scheds.scx_tickless]
+auto_mode = []
+gaming_mode = ["-f", "5000", "-s", "5000"]
+lowlatency_mode = ["-f", "5000", "-s", "1000"]
+powersave_mode = ["-f", "50"]
+server_mode = ["-f", "100"]
+
+[scheds.scx_rustland]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
+
+[scheds.scx_cosmos]
+auto_mode = []
+gaming_mode = ["-s", "700", "-S"]
+lowlatency_mode = ["-s", "700", "-S", "-m", "performance", "-w"]
+powersave_mode = ["-m", "powersave"]
+server_mode = ["-s", "20000", "-c", "75", "-p", "250"]
+
+[scheds.scx_beerland]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
+
+[scheds.scx_cake]
+auto_mode = ["--profile", "default"]
+gaming_mode = ["--profile", "gaming"]
+lowlatency_mode = ["--profile", "esports"]
+powersave_mode = ["--profile", "battery"]
+server_mode = ["--profile", "gaming"]
+
+[scheds.scx_pandemonium]
+auto_mode = []
+gaming_mode = []
+lowlatency_mode = []
+powersave_mode = []
+server_mode = []
+```
+
+```bash
+systemctl enable --now scx_loader.service
+systemctl restart scx_loader.service
+```
