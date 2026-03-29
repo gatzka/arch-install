@@ -358,8 +358,8 @@ Create configuration file:
 /etc/scx_loader/config.toml
 ---
 
-default_sched = "scx_cosmos"
-default_mode = "Auto"
+default_sched = "scx_lavd"
+default_mode = "LowLatency"
 
 [scheds.scx_bpfland]
 auto_mode = ["-m", "auto"]
