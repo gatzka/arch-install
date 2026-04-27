@@ -287,7 +287,7 @@ We always assume that this is an EFI installation.
    
     ```
 
-27. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb`
+27. gvfs: `yay -S gvfs gvfs-mtp gvfs-gphoto2 gvfs-smb gvfs-dnssd`
 
 28. The rest: `yay -S thunderbird tmux openssh cscope`
 
