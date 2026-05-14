@@ -317,7 +317,7 @@ We always assume that this is an EFI installation.
     yay -S bluez bluez-utils blueman
     systemctl enable bluetooth.service
     ```
-
+37. Proto VPN
     For proton VPN connections proton advices to disable IPv6 traffic:
 
     ```bash
@@ -337,7 +337,7 @@ We always assume that this is an EFI installation.
 
     -10 is an example. The value should be negative to flush out formerly assigned DNS servers.
 
-37. key management:
+38. key management:
 
     ```bash
     yay -S gnome-keyring seahorse gcr-4
@@ -347,7 +347,7 @@ We always assume that this is an EFI installation.
     reboot
     ```
 
-38. Select high-performance desktop scheduler (optional)
+39. Select high-performance desktop scheduler (optional)
 
 ```bash
 yay -S scx-scheds-git
