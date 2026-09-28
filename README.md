@@ -122,12 +122,12 @@ We always assume that this is an EFI installation.
 
    - `pacman -S libfido2`
    - `systemd-cryptenroll /dev/[device]2 --fido2-device=auto --fido2-with-client-pin=yes --fido2-with-user-presence=yes`
-   - configure /etc/crypttab.initramfs
+   - add root entry to /etc/crypttab
 
      ```bash
-     vim /etc/crypttab.initramfs
+     vim /etc/crypttab
       ---
-     root UUID=<blkid /dev/[device]2> none fido2-device=auto
+     root UUID=<blkid /dev/[device]2> none fido2-device=auto,x-initrd.attach
      ```
 
    - `mkinitcpio -P`
